@@ -13,7 +13,13 @@ I HATE BEETS
 ===========================================================*/
 
 
+function rant(message){
+    console.log(message);
+    console.log(message);
+    console.log(message);
+}
 
+rant("I want to go to Korea!");
 
 
 
@@ -30,6 +36,13 @@ multiply(9,9) //81
 multiply(5,4) //20
 =========================================================== */
 
+function multiply(a, b){
+    return a * b;
+}
+
+multiply(2,3) //6
+multiply(9,9) //81
+multiply(5,4) //20
 
 
 
@@ -56,7 +69,18 @@ isShortsWeather(48) //false
 isShortsWeather(75) //true
 =========================================================== */
 
+function isShortsWeather(temperature){
+    if(temperature >= 75){
+        return true;
+    } else {
+        return false;
+    }
+}
 
+
+isShortsWeather(80) //true
+isShortsWeather(48) //false
+isShortsWeather(75) //true
 
 
 
@@ -74,6 +98,17 @@ lastElement([1]) //1
 lastElement([]) //null
 =========================================================== */
 
+function lastElement(arr){
+    if(arr.length > 0){
+        console.log(arr[arr.length - 1]);
+    } else {
+        console.log(null);
+    }
+}
+
+lastElement([3,5,7]) //7
+lastElement([1]) //1
+lastElement([]) //null
 
 
 
@@ -90,6 +125,14 @@ capitalize('eggplant') //"Eggplant"
 capitalize('pamplemousse') //"Pamplemousse"
 capitalize('squid') //"Squid"
 =========================================================== */
+
+function capitalize(str){
+    let newStr = str.charAt(0).toUpperCase() + str.slice(1);
+    return newStr;
+}
+capitalize('eggplant') //"Eggplant"
+capitalize('pamplemousse') //"Pamplemousse"
+capitalize('squid') //"Squid"
 
 
 
@@ -108,6 +151,18 @@ sumArray([2,2,2,2]) //8
 sumArray([50,50,2]) //102
 =========================================================== */
 
+function sumArray(numArr){
+    let sum = 0;
+    numArr.forEach(element => {
+        sum += element;
+    });
+    return sum;
+
+}
+
+sumArray([1,2,3]) //6
+sumArray([2,2,2,2]) //8
+sumArray([50,50,2]) //102
 
 
 
@@ -133,6 +188,19 @@ returnDay(4) //"Thursday"
 returnDay(8) //null
 =========================================================== */
 
+function returnDay(num){
+    let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    if(num > 0 && num <= 7){
+        console.log(days[num - 1]);
+    } else {
+        console.log(null);
+    }
+}
+
+returnDay(1) //"Monday"
+returnDay(4) //"Thursday"
+returnDay(8) //null
+
 
 
 
@@ -151,6 +219,21 @@ isSnakeEyes(1,5); //Not Snake Eyes!
 isSnakeEyes(6,3); //Not Snake Eyes!
 isSnakeEyes(1,1); //Snake Eyes!
 =========================================================== */
+
+function isSnakeEyes(a, b){
+
+    if(a === 1 && b === 1){
+        console.log("Snake Eyes!");
+    } else {
+        console.log("Not Snake Eyes!");
+    }
+
+}
+
+
+isSnakeEyes(1,5); //Not Snake Eyes!
+isSnakeEyes(6,3); //Not Snake Eyes!
+isSnakeEyes(1,1); //Snake Eyes!
 
 
 
@@ -175,7 +258,13 @@ calculateDogAge(0.5); //Your doggie is 3.5 years old in dog years!
 calculateDogAge(12); //Your doggie is 84 years old in dog years!
 =========================================================== */
 
-
+function calculateDogAge(age){
+    let dogAge = age * 7;
+    console.log(`Your doggie is ${dogAge} years old in dog years!`);
+}
+calculateDogAge(1); //Your doggie is 7 years old in dog years!
+calculateDogAge(0.5); //Your doggie is 3.5 years old in dog years!
+calculateDogAge(12); //Your doggie is 84 years old in dog years!
 
 
 
@@ -194,6 +283,19 @@ isPangram('the quick brown fox jumps over the lazy dog') //true
 isPangram('five boxing wizards jump quickly at it'); //false
 =========================================================== */
 
+function isPangram(sentence){
+    let regex = /([a-z])(?!.*\1)/g;
+    return sentence.toLowerCase().match(regex).length === 26;   
+        // if(sentence.toLowerCase().match(regex).length === 26){
+        //     console.log(true);
+        // } else{
+        //     console.log(false);
+        // }
+    
+}
+isPangram('abcdefghijklmnopqrstuvwxyz'); //true
+isPangram('the quick brown fox jumps over the lazy dog') //true
+isPangram('five boxing wizards jump quickly at it'); //false
 
 
 
@@ -209,6 +311,17 @@ in that array.
 // evens([1, 2, 3, 4, 5, 6, 7, 8]);
 =========================================================== */
 
+function evens(arr){
+    let newArr = [];
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] % 2 === 0){
+            newArr.push(arr[i]);
+        }
+    }
+    return(newArr);
+}
+evens([1, 2, 3, 4, 5, 6, 7, 8]);
+
 
 
 
@@ -223,3 +336,16 @@ returns the *largest* number in the array.
 max([1, 5, 10, 15]); //15
 max([99, 0, -1, 45]); //99
 =========================================================== */
+
+function max(arr){
+    let maxNum = 0;
+    for(let i = 0; i < arr.length; i++){
+      if(arr[i] > maxNum){
+        maxNum = arr[i];
+      }
+    }
+    return maxNum;
+}
+
+max([1, 5, 10, 15]); //15
+max([99, 0, -1, 45]); //99
