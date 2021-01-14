@@ -360,6 +360,9 @@ function max(arr){
       }
     }
     return maxNum;
+
+    //return arr.sort((a, b) => a - b).pop();
+    //return Math.max(...arr);
 }
 
 max([1, 5, 10, 15]); //15
