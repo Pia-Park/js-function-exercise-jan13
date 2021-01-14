@@ -75,6 +75,7 @@ function isShortsWeather(temperature){
     } else {
         return false;
     }
+    //return temperture >= 75;
 }
 
 
@@ -104,6 +105,12 @@ function lastElement(arr){
     } else {
         console.log(null);
     }
+
+    //ternary operator 
+    //(condition)?true:false;
+    //(isDrunk === 1)?"yes":"no";
+
+    //return arr.length > 0 ? arr[arr.length - 1] : null;
 }
 
 lastElement([3,5,7]) //7
@@ -128,6 +135,8 @@ capitalize('squid') //"Squid"
 
 function capitalize(str){
     let newStr = str.charAt(0).toUpperCase() + str.slice(1);
+    // let newStr = str.charAt(0).toUpperCase().concat(str.slice(1));
+
     return newStr;
 }
 capitalize('eggplant') //"Eggplant"
@@ -157,7 +166,7 @@ function sumArray(numArr){
         sum += element;
     });
     return sum;
-
+    //return numArr.reduce((accmulator, current) => accumlator + current);
 }
 
 sumArray([1,2,3]) //6
@@ -195,6 +204,8 @@ function returnDay(num){
     } else {
         console.log(null);
     }
+
+    //return (num > 0 && num <= 7) ? days[num -1] : null;
 }
 
 returnDay(1) //"Monday"
@@ -227,6 +238,8 @@ function isSnakeEyes(a, b){
     } else {
         console.log("Not Snake Eyes!");
     }
+
+    // return a===1 && b ===1 ? "snake eys" : "not snake eye";
 
 }
 
@@ -319,6 +332,8 @@ function evens(arr){
         }
     }
     return(newArr);
+
+    //return arr.filter((e) => e%2 === 0);
 }
 evens([1, 2, 3, 4, 5, 6, 7, 8]);
 
